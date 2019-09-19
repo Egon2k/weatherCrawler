@@ -15,5 +15,22 @@ html = urlopen(req).read()
 soup = BeautifulSoup(html, 'html.parser')
 
 #search for all td tags containing the classname "temp"
-for temp in soup.find_all("td", classname="temp"):
-    print(temp.contents)
+for date in soup.find_all("tr", classname="clickable closed"):
+ 
+    print(date.find("td", classname="hidden-cell-sm description").contents)
+    print(date.find("td", classname="temp").contents)
+    print(date.find("td", classname="feels").contents)
+    print(date.find("td", classname="humidity").contents)
+    print(date.find("td", classname="wind").contents)
+    
+    print("\n")
+    
+for date in soup.find_all("tr", classname=" closed"):
+
+    print(date.find("td", classname="hidden-cell-sm description").contents)
+    print(date.find("td", classname="temp").contents)
+    print(date.find("td", classname="feels").contents)
+    print(date.find("td", classname="humidity").contents)
+    print(date.find("td", classname="wind").contents)
+    
+    print("\n")
