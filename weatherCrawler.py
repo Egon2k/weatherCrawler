@@ -17,20 +17,22 @@ soup = BeautifulSoup(html, 'html.parser')
 #search for all td tags containing the classname "temp"
 for date in soup.find_all("tr", classname="clickable closed"):
  
-    print(date.find("td", classname="hidden-cell-sm description").contents)
-    print(date.find("td", classname="temp").contents)
-    print(date.find("td", classname="feels").contents)
-    print(date.find("td", classname="humidity").contents)
-    print(date.find("td", classname="wind").contents)
+    print(date.find("span", class_="dsx-date").text)
+    print(date.find("td", classname="hidden-cell-sm description").text)
+    print(date.find("td", classname="temp").text)
+    print(date.find("td", classname="feels").text)
+    print(date.find("td", classname="humidity").text)
+    print(date.find("td", classname="wind").text)
     
     print("\n")
     
 for date in soup.find_all("tr", classname=" closed"):
 
-    print(date.find("td", classname="hidden-cell-sm description").contents)
-    print(date.find("td", classname="temp").contents)
-    print(date.find("td", classname="feels").contents)
-    print(date.find("td", classname="humidity").contents)
-    print(date.find("td", classname="wind").contents)
+    print(date.find("span", class_="dsx-date").text)
+    print(date.find("td", classname="hidden-cell-sm description").text)
+    print(date.find("td", classname="temp").text)
+    print(date.find("td", classname="feels").text)
+    print(date.find("td", classname="humidity").text)
+    print(date.find("td", classname="wind").text)
     
     print("\n")
